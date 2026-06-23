@@ -1,0 +1,82 @@
+@use "sass:map";
+@use "variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font: inherit; */
+}
+html,
+body {
+  height: 100%;
+  /* min-height: 100vh; */
+}
+/* html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+} */
+body,
+a {
+  font-family: Karla, sans-serif;
+}
+body {
+  background-color: map.get(variables.$webColors, "Green-light");
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px 15px;
+  color: map.get(variables.$webColors, "grey-dark");
+  font-weight: 400;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p {
+//   margin-bottom: 16px;
+// }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+p,
+li,
+figcaption {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+a,
+button {
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}

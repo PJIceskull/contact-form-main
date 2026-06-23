@@ -1,0 +1,20 @@
+@use "sass:map";
+
+// Color Palette using Map value
+$webColors: (
+  "red": hsl(0, 66%, 54%),
+  "Green-light": hsl(148, 38%, 91%),
+  "Green-medium": hsl(169, 82%, 27%),
+  "white": hsl(0, 0%, 100%),
+  "grey-medium": hsl(186, 15%, 59%),
+  "grey-dark": hsl(187, 24%, 22%),
+);
+// Remove '/' in code below
+// @debug map-get($/map: $-colors, $/key: 'red');
+
+// Device Sizes
+$mobileWidth: 375px;
+$desktopWidth: 1440px;
+
+// Font Sizes
+$labelFontSize: 1rem; // 16px

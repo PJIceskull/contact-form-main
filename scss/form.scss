@@ -1,0 +1,152 @@
+@use "sass:map";
+@use "variables.scss";
+
+.contactForm {
+  background-color: map.get(variables.$webColors, "white");
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 25px;
+  border-radius: 15px;
+  max-width: variables.$mobileWidth;
+  h1 {
+    color: map.get(variables.$webColors, "grey-dark");
+    font-weight: 700;
+  }
+  span {
+    color: map.get(variables.$webColors, "Green-medium");
+  }
+  input,
+  textarea {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid map.get(variables.$webColors, "grey-medium");
+    padding: 12px 15px;
+    &:focus {
+      outline: none;
+      border: 1px solid map.get(variables.$webColors, "Green-medium");
+    }
+    &:user-invalid {
+      border: 1px solid map.get(variables.$webColors, "red");
+    }
+    &:checked {
+      accent-color: map.get(variables.$webColors, "Green-medium");
+    }
+  }
+  label {
+    font-size: variables.$labelFontSize;
+  }
+}
+
+.checkBoxInputArea,
+.inputArea {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transition-duration: 0.3s;
+}
+
+.inputArea {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.radioGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 15px;
+  border-radius: 6px;
+  border: 1px solid map.get(variables.$webColors, "grey-medium");
+  width: 100%;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  &:hover,
+  &:focus {
+    background-color: map.get(variables.$webColors, "Green-light");
+  }
+  input,
+  label {
+    cursor: inherit;
+  }
+  input {
+    width: 20px;
+    height: 20px;
+    &:checked {
+      background-color: map.get(variables.$webColors, "Green-light");
+    }
+  }
+  label {
+    width: 100%;
+  }
+}
+
+.checkBoxInputArea {
+  align-items: center;
+  gap: 10px;
+}
+
+.checkBoxGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 25px;
+  padding: 0px 8px;
+  input {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    &:checked {
+      background-image: url("../assets/images/icon-checkbox-check.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.submitBTN {
+  border: none;
+  width: 100%;
+  color: map.get(variables.$webColors, "white");
+  background-color: map.get(variables.$webColors, "Green-medium");
+  padding: 15px;
+  border-radius: 6px;
+  &:hover {
+    background-color: map.get(variables.$webColors, "grey-dark");
+  }
+}
+
+.invalidText {
+  color: map.get(variables.$webColors, "red");
+}
+
+.messageBox {
+  background-color: map.get(variables.$webColors, "grey-dark");
+  color: map.get(variables.$webColors, "white");
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .messageHead {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    color: map.get(variables.$webColors, "Green-light");
+  }
+}
