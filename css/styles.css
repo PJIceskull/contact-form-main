@@ -255,6 +255,7 @@ main {
     max-width: 1440px;
     width: 50vw;
     align-items: flex-start;
+    padding: 32px;
   }
   .contactForm textarea {
     max-height: 108px;
