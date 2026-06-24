@@ -1,0 +1,17 @@
+@use "variables.scss";
+
+// Media Queries for Device Screens
+@media screen and (width >= 1024px) {
+  .contactForm {
+    max-width: variables.$desktopWidth;
+    width: 50vw;
+    align-items: flex-start;
+    textarea {
+      max-height: 108px;
+    }
+  }
+  .wrapper {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
