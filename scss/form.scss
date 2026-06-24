@@ -12,6 +12,7 @@
   gap: 25px;
   border-radius: 15px;
   max-width: variables.$mobileWidth;
+  // max-width: variables.$desktopWidth;
   h1 {
     color: map.get(variables.$webColors, "grey-dark");
     font-weight: 700;
@@ -36,6 +37,9 @@
       accent-color: map.get(variables.$webColors, "Green-medium");
     }
   }
+  textarea {
+    resize: none;
+  }
   label {
     font-size: variables.$labelFontSize;
   }
@@ -47,7 +51,6 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  // gap: 25px;
   gap: inherit;
 }
 

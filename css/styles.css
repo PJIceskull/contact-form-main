@@ -120,6 +120,9 @@ main {
 .contactForm textarea:checked {
   accent-color: hsl(169, 82%, 27%);
 }
+.contactForm textarea {
+  resize: none;
+}
 .contactForm label {
   font-size: 1rem;
 }
@@ -245,6 +248,21 @@ main {
 }
 .messageBox p {
   color: hsl(148, 38%, 91%);
+}
+
+@media screen and (width >= 1024px) {
+  .contactForm {
+    max-width: 1440px;
+    width: 50vw;
+    align-items: flex-start;
+  }
+  .contactForm textarea {
+    max-height: 108px;
+  }
+  .wrapper {
+    flex-direction: row;
+    gap: 15px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
