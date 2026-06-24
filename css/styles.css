@@ -79,6 +79,7 @@ main {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  position: relative;
 }
 
 .contactForm {
@@ -236,6 +237,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: absolute;
 }
 .messageBox .messageHead {
   display: flex;
