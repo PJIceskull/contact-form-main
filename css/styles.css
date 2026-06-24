@@ -124,6 +124,15 @@ main {
   font-size: 1rem;
 }
 
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: inherit;
+}
+
 .checkBoxInputArea,
 .inputArea {
   display: flex;
@@ -140,6 +149,10 @@ main {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+}
+
+.radio .wrapper {
+  gap: inherit;
 }
 
 .radioGroup {

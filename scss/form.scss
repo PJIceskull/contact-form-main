@@ -41,6 +41,16 @@
   }
 }
 
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  // gap: 25px;
+  gap: inherit;
+}
+
 .checkBoxInputArea,
 .inputArea {
   display: flex;
@@ -57,6 +67,11 @@
   flex-direction: column;
   gap: 10px;
   width: 100%;
+}
+.radio {
+  .wrapper {
+    gap: inherit;
+  }
 }
 .radioGroup {
   display: flex;
