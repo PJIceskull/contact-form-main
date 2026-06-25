@@ -265,6 +265,7 @@ main {
   .wrapper {
     flex-direction: row;
     gap: 15px;
+    align-items: flex-start;
   }
 }
 
