@@ -32,20 +32,20 @@
         <h1>Contact Us</h1>
 
         <div class="wrapper">
-          <div class="inputArea">
+          <div class="inputArea fn">
             <label for="firstname">First Name <span>*</span></label>
             <input type="text" name="firstname" id="firstname" required />
             <p class="invalidText">This field is required</p>
           </div>
 
-          <div class="inputArea">
+          <div class="inputArea ln">
             <label for="lastname">Last Name <span>*</span></label>
             <input type="text" name="lastname" id="lastname" required />
             <p class="invalidText">This field is required</p>
           </div>
         </div>
 
-        <div class="inputArea">
+        <div class="inputArea em">
           <label for="email">Email Address <span>*</span></label>
           <input type="text" name="email" id="email" required />
           <p class="invalidText">Please enter a valid email address</p>
@@ -53,20 +53,30 @@
         </div>
 
         <div class="inputArea radio">
-          <label for="query-type">Query Type <span>*</span></label>
+          <legend>Query Type <span>*</span></legend>
           <div class="wrapper">
             <div class="radioGroup">
-              <input type="radio" name="query-type" id="GeneralEnquiry" />
-              <label for="GeneralEnquiry">General Enquiry</label>
+              <input
+                type="radio"
+                name="query-type"
+                id="generalEnquiry"
+                value="generalEnquiry"
+              />
+              <label for="generalEnquiry">General Enquiry</label>
             </div>
             <div class="radioGroup">
-              <input type="radio" name="query-type" id="SupportRequest" />
-              <label for="SupportRequest">Support Request</label>
+              <input
+                type="radio"
+                name="query-type"
+                id="supportRequest"
+                value="supportRequest"
+              />
+              <label for="supportRequest">Support Request</label>
             </div>
           </div>
           <p class="invalidText">Please select a query type</p>
         </div>
-        <div class="inputArea">
+        <div class="inputArea ms">
           <label for="message">Message <span>*</span></label>
           <textarea
             rows="10"
