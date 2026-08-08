@@ -50,6 +50,8 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [Sass](https://sass-lang.com/) - CSS prepocessor language.
+- Javascript
+- [Jquery](https://jquery.com/) - Javascript Library
 
 ### What I learned
 
