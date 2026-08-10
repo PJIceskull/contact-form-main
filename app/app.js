@@ -5,7 +5,7 @@ function eraseErrorMessages() {
   $(".inputArea").each(function (index, element) {
     // console.log(element);
     // Uncomment code after you are done
-    $("p").html("");
+    $(".invalidText").html("");
   });
 }
 
