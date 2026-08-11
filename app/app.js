@@ -11,50 +11,60 @@ function eraseErrorMessages() {
 
 function checkFormInputs() {
   // Form Values
-  let firstName = $("#firstname").val();
-  let lastName = $("#lastname").val();
-  let email = $("#email").val();
+  let firstName = document.getElementById("firstname");
+  let lastName = document.getElementById("lastname");
+  let email = document.getElementById("email");
+  // let radioVal = $("input[name=query-type]:checked").val();
   let radioVal = $("input[name=query-type]:checked").val();
-  let message = $(".inputArea textarea").val();
-  let checkBox = $("#consent");
+  let message = document.getElementById("message");
+  let checkBox = document.getElementById("consent");
 
   // Clear any previous error messages
   eraseErrorMessages();
+  // Example of checking validity of input
+  console.log("First name input:", firstName.checkValidity());
 
   // Check Input
-  if (firstName != "") {
+  if (firstName.checkValidity() === true) {
     console.log("First Name Input:", firstName);
+    $(".fn .invalidText").html();
   } else {
-    console.log("No Name Entered.");
-    $(".fn p").append("This field is required");
+    console.log("No First Name Entered.");
+    $(".fn .invalidText").append("This field is required");
   }
-  if (lastName != "") {
+  if (lastName.checkValidity() === true) {
     console.log("Last Name Input:", lastName);
+    $(".ln .invalidText").html();
   } else {
-    console.log("No Name Entered.");
-    $(".ln p").append("This field is required");
+    console.log("No Last Name Entered.");
+    $(".ln .invalidText").append("This field is required");
   }
-  if (message != "") {
+  // Check if Email is valid
+  if (email.checkValidity() === true) {
+    console.log("Please enter a valid email address");
+    $(".em .invalidText").append("Please enter a valid email address");
+  }
+  if (message.checkValidity() === true) {
     console.log("Text Message:", message);
   } else {
     console.log("Empty Text");
-    $(".ms p").append("This field is required");
+    $(".ms .invalidText").append("This field is required");
   }
 
   if (radioVal != undefined) {
     console.log("Query Selected:", radioVal);
   } else {
     console.log("Please select a query type.");
-    $(".radio p").append("Please select a query type");
+    $(".radio .invalidText").append("Please select a query type");
   }
 
-  if (checkBox[0].checked == false) {
+  if (checkBox.checkValidity() === true) {
+    console.log("Box Checked!");
+  } else {
     console.log("To submit this form, please consent to being contacted");
-    $(".checkBoxInputArea p").append(
+    $(".checkBoxInputArea .invalidText").append(
       "To submit this form, please consent to being contacted",
     );
-  } else {
-    console.log("Box Checked!");
   }
 }
 
