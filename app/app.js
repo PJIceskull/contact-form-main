@@ -22,7 +22,7 @@ function checkFormInputs() {
   // Clear any previous error messages
   eraseErrorMessages();
   // Example of checking validity of input
-  console.log("First name input:", firstName.checkValidity());
+  // console.log("First name input:", firstName.checkValidity());
 
   // Check Input
   if (firstName.checkValidity() === true) {
@@ -40,10 +40,14 @@ function checkFormInputs() {
     $(".ln .invalidText").append("This field is required");
   }
   // Check if Email is valid
-  if (email.checkValidity() === true) {
+  if (email.value === "") {
+    console.log("Email field is empty");
+    $(".em .invalidText").append("This field is required");
+  } else if (email.checkValidity() === false) {
     console.log("Please enter a valid email address");
     $(".em .invalidText").append("Please enter a valid email address");
   }
+  // Checking if Message is empty or Valid
   if (message.checkValidity() === true) {
     console.log("Text Message:", message);
   } else {
@@ -51,6 +55,7 @@ function checkFormInputs() {
     $(".ms .invalidText").append("This field is required");
   }
 
+  // See if one of Radio Buttons is Selected
   if (radioVal != undefined) {
     console.log("Query Selected:", radioVal);
   } else {
@@ -58,6 +63,7 @@ function checkFormInputs() {
     $(".radio .invalidText").append("Please select a query type");
   }
 
+  // Checking if Checkbox is checked/Valid
   if (checkBox.checkValidity() === true) {
     console.log("Box Checked!");
   } else {
@@ -71,8 +77,8 @@ function checkFormInputs() {
 // Init Listerners
 function initListeners() {
   $(".submitBTN").on("click", function () {
-    console.log("Submit Button Clicked");
-
+    // Print to console if Submit BTN is Clicked
+    // console.log("Submit Button Clicked");
     checkFormInputs();
 
     $(window).on("load", function () {
@@ -81,8 +87,10 @@ function initListeners() {
     });
   });
 
-  console.log("Listening...");
+  // console.log("Listening...");
+  // Erase any Error Messages Present
   eraseErrorMessages();
+  // Load each input value to console
   console.log(inputValues);
 }
 
