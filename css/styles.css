@@ -155,8 +155,20 @@ main {
   width: 100%;
 }
 
-.radio .wrapper {
+fieldset {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.radio {
   gap: inherit;
+}
+
+legend {
+  margin-bottom: 10px;
 }
 
 .radioGroup {
@@ -238,6 +250,7 @@ main {
   flex-direction: column;
   gap: 10px;
   position: absolute;
+  top: 0;
 }
 .messageBox .messageHead {
   display: flex;

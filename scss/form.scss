@@ -71,10 +71,19 @@
   gap: 10px;
   width: 100%;
 }
+fieldset {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  // gap: 10px;
+}
 .radio {
-  .wrapper {
-    gap: inherit;
-  }
+  gap: inherit;
+}
+legend {
+  margin-bottom: 10px;
 }
 .radioGroup {
   display: flex;
@@ -158,6 +167,8 @@
   flex-direction: column;
   gap: 10px;
   position: absolute;
+  top: 0;
+  // width: 65%;
   .messageHead {
     display: flex;
     align-items: center;
