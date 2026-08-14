@@ -17,3 +17,8 @@
     align-items: flex-start;
   }
 }
+@media screen and (width <= 1024px) {
+  fieldset {
+    flex-wrap: wrap;
+  }
+}
