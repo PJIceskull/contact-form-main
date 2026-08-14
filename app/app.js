@@ -60,7 +60,7 @@ function checkFormInputs() {
     console.log("Query Selected:", radioVal);
   } else {
     console.log("Please select a query type.");
-    $(".radio .invalidText").append("Please select a query type");
+    $("#radio").append("Please select a query type");
   }
 
   // Checking if Checkbox is checked/Valid
