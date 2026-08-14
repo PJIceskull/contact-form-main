@@ -61,6 +61,7 @@
               name="query-type"
               id="generalEnquiry"
               value="generalEnquiry"
+              required
             />
             <label for="generalEnquiry">General Enquiry</label>
           </div>
@@ -70,12 +71,13 @@
               name="query-type"
               id="supportRequest"
               value="supportRequest"
+              required
             />
             <label for="supportRequest">Support Request</label>
           </div>
-
-          <p class="invalidText">Please select a query type</p>
         </fieldset>
+        <p class="invalidText" id="radio">Please select a query type</p>
+
         <div class="inputArea ms">
           <label for="message">Message <span>*</span></label>
           <textarea
