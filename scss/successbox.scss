@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "variables.scss";
+
+.messageBox {
+  background-color: map.get(variables.$webColors, "grey-dark");
+  color: map.get(variables.$webColors, "white");
+  padding: 30px;
+  border-radius: 12px;
+  // Hide Message now that you position it.
+  // Change/Reveal Message to "flex" after working on JS
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  // width: 65%;
+  .messageHead {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    color: map.get(variables.$webColors, "Green-light");
+  }
+}
