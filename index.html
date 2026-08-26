@@ -55,28 +55,31 @@
         <fieldset class="radio">
           <legend>Query Type <span>*</span></legend>
 
-          <div class="radioGroup">
-            <input
-              type="radio"
-              name="query-type"
-              id="generalEnquiry"
-              value="generalEnquiry"
-              required
-            />
-            <label for="generalEnquiry">General Enquiry</label>
+          <div class="wrapper">
+            <label for="generalEnquiry" class="radioGroup">
+              <input
+                type="radio"
+                name="query-type"
+                id="generalEnquiry"
+                value="generalEnquiry"
+                required
+              />
+              General Enquiry
+            </label>
+
+            <label for="supportRequest" class="radioGroup">
+              <input
+                type="radio"
+                name="query-type"
+                id="supportRequest"
+                value="supportRequest"
+                required
+              />
+              Support Request
+            </label>
           </div>
-          <div class="radioGroup">
-            <input
-              type="radio"
-              name="query-type"
-              id="supportRequest"
-              value="supportRequest"
-              required
-            />
-            <label for="supportRequest">Support Request</label>
-          </div>
+          <p class="invalidText" id="radio">Please select a query type</p>
         </fieldset>
-        <p class="invalidText" id="radio">Please select a query type</p>
 
         <div class="inputArea ms">
           <label for="message">Message <span>*</span></label>
@@ -100,7 +103,8 @@
             To submit this form, please consent to being contacted
           </p>
         </div>
-        <button class="submitBTN">Submit</button>
+        <!-- <button class="submitBTN">Submit</button> -->
+        <!-- <input type="submit" value="Submit" class="submitBTN" /> -->
       </form>
 
       <div class="messageBox">
