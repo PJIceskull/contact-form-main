@@ -77,17 +77,22 @@ fieldset {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  flex-direction: column;
+  gap: 15px;
+  .invalidText {
+    align-self: flex-start;
+  }
 }
 .radio {
-  gap: inherit;
+  // gap: 10px;
 }
 legend {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .radioGroup {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   gap: 15px;
   border-radius: 6px;
   border: 1px solid map.get(variables.$webColors, "grey-medium");
@@ -146,6 +151,7 @@ legend {
   background-color: map.get(variables.$webColors, "Green-medium");
   padding: 15px;
   border-radius: 6px;
+  cursor: pointer;
   &:hover {
     background-color: map.get(variables.$webColors, "grey-dark");
   }
