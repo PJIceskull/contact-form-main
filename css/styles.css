@@ -246,6 +246,14 @@ legend {
   color: hsl(0, 66%, 54%);
 }
 
+@keyframes SlideDown {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
 .messageBox {
   background-color: hsl(187, 24%, 22%);
   color: hsl(0, 0%, 100%);
@@ -256,6 +264,8 @@ legend {
   gap: 10px;
   position: absolute;
   top: 0;
+  animation-name: SlideDown;
+  animation-duration: 1.25s;
 }
 .messageBox .messageHead {
   display: flex;

@@ -1,6 +1,15 @@
 @use "sass:map";
 @use "variables.scss";
 
+@keyframes SlideDown {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 .messageBox {
   background-color: map.get(variables.$webColors, "grey-dark");
   color: map.get(variables.$webColors, "white");
@@ -14,6 +23,8 @@
   position: absolute;
   top: 0;
   // width: 65%;
+  animation-name: SlideDown;
+  animation-duration: 1.25s;
   .messageHead {
     display: flex;
     align-items: center;
