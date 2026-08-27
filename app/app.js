@@ -90,6 +90,7 @@ function checkFormInputs() {
 
   // If the Form has no Errors, then display the Success Message Box
   if (hasError === false) {
+    scroll(0, 0); // Scroll back to Top of Page
     document.querySelector("form").reset(); // Reset Form Fields
     $(".messageBox").css({ display: "flex" });
   }
