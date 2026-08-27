@@ -18,6 +18,7 @@ function checkFormInputs() {
   let radioVal = $("input[name=query-type]:checked").val();
   let message = document.getElementById("message");
   let checkBox = document.getElementById("consent");
+  let hasError = false;
 
   // Clear any previous error messages
   eraseErrorMessages();
@@ -72,22 +73,40 @@ function checkFormInputs() {
       "To submit this form, please consent to being contacted",
     );
   }
+
+  for (let i = 0; i < inputValues.length; i++) {
+    if (inputValues[i].checkValidity() === false) {
+      hasError = true;
+      console.log("Form Inputs Invalid!");
+      break;
+    } else {
+      hasError = false;
+      console.log("Form Input Valid!");
+    }
+  }
+
+  // Print to consoles to check Error Status
+  console.log("Error Status:", hasError);
+
+  // If the Form has no Errors, then display the Success Message Box
+  if (hasError === false) {
+    document.querySelector("form").reset(); // Reset Form Fields
+    $(".messageBox").css({ display: "flex" });
+  }
 }
 
 // Init Listerners
 function initListeners() {
-  $(".submitBTN").on("click", function () {
+  $(".submitBTN").on("click", function (e) {
+    e.preventDefault(); // Cancel Default Form Submission Behavior
+
     // Print to console if Submit BTN is Clicked
     // console.log("Submit Button Clicked");
-    checkFormInputs();
 
-    $(window).on("load", function () {
-      console.log("Ready");
-      $(".messageBox").css({ display: "flex" });
-    });
+    // Function that Check Form Inputs
+    checkFormInputs();
   });
 
-  // console.log("Listening...");
   // Erase any Error Messages Present
   eraseErrorMessages();
   // Load each input value to console
