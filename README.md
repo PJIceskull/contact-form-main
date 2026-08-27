@@ -49,50 +49,143 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- [Sass](https://sass-lang.com/) - CSS prepocessor language.
+- [SASS](https://sass-lang.com/) - CSS prepocessor language.
 - Javascript
 - [Jquery](https://jquery.com/) - Javascript Library
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This challenge served as a nice refresher of working with Form elements. During development, I relearn basic concepts like the `e.preventDefault`, DOM using JavaScripts, and using `for loop` functions. I also learn how to check the error status of my input elements using `checkValidity()`. Of course, on the CSS I learned how to created **basic animation for elements that aren't hover states**! Additionally, I learn how style form elements like the _textarea_, _radio_ buttons, and _checkbox_ elements.
 
-To see how you can add code snippets, see below:
+Some HTML code I'm proud of:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<fieldset class="radio">
+  <legend>Query Type <span>*</span></legend>
+  <div class="wrapper">
+    <label for="generalEnquiry" class="radioGroup">
+      <input
+        type="radio"
+        name="query-type"
+        id="generalEnquiry"
+        value="generalEnquiry"
+        required
+      />
+      General Enquiry
+    </label>
+    <label for="supportRequest" class="radioGroup">
+      <input
+        type="radio"
+        name="query-type"
+        id="supportRequest"
+        value="supportRequest"
+        required
+      />
+      Support Request
+    </label>
+  </div>
+</fieldset>
+```
+
+CSS:
+
+```css
+@keyframes SlideDown {
+  0% {
+    top: -150px;
+  }
+  100% {
+    top: 0;
+  }
+}
+```
+
+```scss
+$webColors: (
+  "red": hsl(0, 66%, 54%),
+  "Green-light": hsl(148, 38%, 91%),
+  "Green-medium": hsl(169, 82%, 27%),
+  "white": hsl(0, 0%, 100%),
+  "grey-medium": hsl(186, 15%, 59%),
+  "grey-dark": hsl(187, 24%, 22%),
+);
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.checkBoxGroup {
+  input {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    padding: 0;
+    border-radius: 2px;
+    &:checked {
+      background-image: url("../assets/images/icon-checkbox-check.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: none;
+    }
+  }
+}
+```
+
+JavaScript:
+
+```js
+if (firstName.checkValidity() === true) {
+  console.log("First Name Input:", firstName);
+  $(".fn .invalidText").html();
+} else {
+  console.log("No First Name Entered.");
+  $(".fn .invalidText").append("This field is required");
 }
 ```
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+for (let i = 0; i < inputValues.length; i++) {
+  if (inputValues[i].checkValidity() === false) {
+    hasError = true;
+    console.log("Form Inputs Invalid!");
+    break;
+  } else {
+    hasError = false;
+    console.log("Form Input Valid!");
+  }
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+```js
+if (hasError === false) {
+  scroll(0, 0);
+  document.querySelector("form").reset();
+  $(".messageBox").css({ display: "flex" });
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I'm curious on learning more about `for Loop`s and `if` statements. I feel that I could have make my JS code cleaner by using a for loop intend for repeating writing `ifelse` statements. I may also consider sticking with vanilla JS intend using JQuery, since I ran to many issues when certain JS cmds were incompatiable with my Jquery code.
 
 ### Useful resources
 
-- [W3schools](https://www.w3schools.com/TAGs/att_input_type_radio.asp) -
-- [MDN Web Docs](https://developer.mozilla.org/en-US/) -
+- [W3schools](https://www.w3schools.com/TAGs/att_input_type_radio.asp)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+  - [Using the `:checked` class property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:checked)
+  - [Textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea)
+- [Stack Overflow](https://stackoverflow.com/questions)
+  - [Styling Radio buttons using Images ex.1](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
+  - [Styling Radio buttons using Images ex.2](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+_Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants._
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+- **GitHub Copilot**
+  - Use mainly for autosuggestion and autocomplete for code.
+
+  I mainly found Copilot more useful in my Javascript where I had less knowledge in what I was doing. Copilot would suggest code ideas when I was typing. However whether the code suggested was useful tended to be a coin-flip.
+  Overall, I found using Copilot to be more annoying when coding due to it's quirks. When it suggests code when I'm already typing, it makes my code & window sloppy to look at. Additionally, it sometiems forgets an ending "}" or ";" for it's suggestions which mess with your code if you are not careful. Another personal gripe I had using Copilot is I like to use VSCode's autocomplete list shortcut (`ctrl+space`) when coding. However since Copilot takes priority, I have manually use the shortcode which slows down my coding. This is especially annoying when I'm writing my CSS.
 
 ## Author
 
@@ -102,4 +195,6 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- **Chamu / @chamu_k_m** from [Frontend Mentor Community Discord](https://discord.gg/UAfh3qzhYb)
+
+Gave me advice on how to make my HTML code more accessibile and what sematic elements I should use. Also gave me advice on how I should code displaying my success message.
